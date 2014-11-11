@@ -1,0 +1,16 @@
+swd;descrOperLang;salesPrice
+MYMOB41;Motherboard30;26.00
+MYCPU41;CPU30;66.00
+MYHDD41;Festplatte30;33.00
+MYRAM41;Arbeitsspeicher30;22.00
+MYGRA41;Grafikkarte30;35.00
+MYMOB42;Motherboard31;36.00
+MYCPU42;CPU31;77.00
+MYHDD42;Festplatte31;38.00
+MYRAM42;Arbeitsspeicher31;27.00
+MYGRA42;Grafikkarte31;39.00
+MYMOB43;Motherboard32;46.00
+MYCPU43;CPU32;88.00
+MYHDD43;Festplatte32;48.00
+MYRAM43;Arbeitsspeicher32;37.00
+MYGRA43;Grafikkarte32;49.00
