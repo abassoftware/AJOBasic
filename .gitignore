@@ -1,1 +1,3 @@
-/classes/
+*.class
+.settings/
+classes/
