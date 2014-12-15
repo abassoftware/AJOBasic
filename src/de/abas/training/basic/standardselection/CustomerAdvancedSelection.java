@@ -21,9 +21,11 @@ public class CustomerAdvancedSelection extends AbstractAjoAccess {
 	public void run(String[] args) {
 		DbContext ctx = getDbContext();
 
-		SelectionBuilder<Customer> selectionBuilder = SelectionBuilder.create(Customer.class);
+		SelectionBuilder<Customer> selectionBuilder =
+				SelectionBuilder.create(Customer.class);
 		// Defines an idno range
-		selectionBuilder.add(Conditions.between(Customer.META.idno, "70020", "70030"));
+		selectionBuilder.add(Conditions
+				.between(Customer.META.idno, "70020", "70030"));
 		// Only selects customers with a phone number
 		selectionBuilder.add(Conditions.notEmpty(Customer.META.phoneNo));
 		// Logical interconnection set to OR
@@ -34,7 +36,10 @@ public class CustomerAdvancedSelection extends AbstractAjoAccess {
 		Query<Customer> query = ctx.createQuery(selectionBuilder.build());
 
 		for (Customer customer : query) {
-			ctx.out().println(customer.getIdno() + " - " + customer.getSwd() + " - " + customer.getDescrOperLang() + " - " + customer.getPhoneNo());
+			ctx.out().println(
+					customer.getIdno() + " - " + customer.getSwd() + " - "
+							+ customer.getDescrOperLang() + " - "
+							+ customer.getPhoneNo());
 		}
 	}
 

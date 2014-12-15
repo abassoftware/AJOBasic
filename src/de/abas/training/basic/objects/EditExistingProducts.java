@@ -29,13 +29,21 @@ public class EditExistingProducts extends AbstractAjoAccess {
 				ProductEditor productEditor = product.createEditor();
 				productEditor.open(EditorAction.UPDATE);
 				// increases sales price by 10 percent
-				double newSalesPrice = productEditor.getSalesPrice().doubleValue() * 1.10;
+				double newSalesPrice =
+						productEditor.getSalesPrice().doubleValue() * 1.10;
 				productEditor.setSalesPrice(newSalesPrice);
 				productEditor.commit();
-				ctx.out().println("Sales price of " + product.getIdno() + " " + product.getSwd() + " changed: " + product.getSalesPrice());
+				ctx.out().println(
+						"Sales price of " + product.getIdno() + " "
+								+ product.getSwd() + " changed: "
+								+ product.getSalesPrice());
 			}
 			catch (CommandException e) {
-				ctx.out().println("An exception occurred while trying to edit " + product.getId().toString() + ": " + e.getMessage());
+				ctx.out()
+						.println(
+								"An exception occurred while trying to edit "
+										+ product.getId().toString() + ": "
+										+ e.getMessage());
 			}
 		}
 	}
@@ -48,9 +56,11 @@ public class EditExistingProducts extends AbstractAjoAccess {
 	 * @return Iterable Query object containing the selected products.
 	 */
 	private Query<Product> getProductsBetween(String from, String to) {
-		SelectionBuilder<Product> selectionBuilder = SelectionBuilder.create(Product.class);
+		SelectionBuilder<Product> selectionBuilder =
+				SelectionBuilder.create(Product.class);
 		selectionBuilder.add(Conditions.between(Product.META.idno, from, to));
-		Query<Product> queryProduct = getDbContext().createQuery(selectionBuilder.build());
+		Query<Product> queryProduct =
+				getDbContext().createQuery(selectionBuilder.build());
 		return queryProduct;
 	}
 

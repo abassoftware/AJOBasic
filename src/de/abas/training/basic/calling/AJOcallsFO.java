@@ -24,7 +24,8 @@ public class AJOcallsFO extends AbstractAjoAccess {
 		// gets the U buffer
 		// BufferFactory.newInstance(false) => FO commands German
 		// BufferFactory.newInstance(true) => FO commands English
-		UserTextBuffer userTextBuffer = BufferFactory.newInstance(false).getUserTextBuffer();
+		UserTextBuffer userTextBuffer =
+				BufferFactory.newInstance(false).getUserTextBuffer();
 
 		// uses a method to initialize the variables
 		initializeUBufferVariables(userTextBuffer, "int", "xiNumber1");
@@ -70,7 +71,8 @@ public class AJOcallsFO extends AbstractAjoAccess {
 	 * @param type The type of variable to initialize.
 	 * @param varname The name of the variable.
 	 */
-	private void initializeUBufferVariables(UserTextBuffer userTextBuffer, String type, String varname) {
+	private void initializeUBufferVariables(UserTextBuffer userTextBuffer,
+			String type, String varname) {
 		if (!userTextBuffer.isVarDefined(varname)) {
 			userTextBuffer.defineVar(type, varname);
 		}

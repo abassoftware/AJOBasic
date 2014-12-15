@@ -20,7 +20,8 @@ public class SelectProducts extends AbstractAjoAccess {
 	public void run(String[] args) {
 		DbContext ctx = getDbContext();
 
-		SelectionBuilder<Product> selectionBuilder = SelectionBuilder.create(Product.class);
+		SelectionBuilder<Product> selectionBuilder =
+				SelectionBuilder.create(Product.class);
 
 		selectionBuilder.add(Conditions.match(Product.META.swd, "^B*0^"));
 		selectionBuilder.add(Conditions.match(Product.META.swd, "*AN*"));
@@ -29,7 +30,9 @@ public class SelectProducts extends AbstractAjoAccess {
 		Query<Product> query = ctx.createQuery(selectionBuilder.build());
 
 		for (Product product : query) {
-			ctx.out().println(product.getIdno() + " - " + product.getSwd() + " - " + product.getDescr());
+			ctx.out().println(
+					product.getIdno() + " - " + product.getSwd() + " - "
+							+ product.getDescr());
 		}
 	}
 

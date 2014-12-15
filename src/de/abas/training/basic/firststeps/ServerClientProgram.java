@@ -21,7 +21,9 @@ public class ServerClientProgram implements ContextRunnable {
 	 */
 	public static void main(String[] args) {
 		ServerClientProgram clientProgram = new ServerClientProgram();
-		DbContext dbContext = ContextHelper.createClientContext("10.0.3.12", 6550, "i7erp0", "sy", clientProgram.getClass().getSimpleName());
+		DbContext dbContext =
+				ContextHelper.createClientContext("10.0.3.12", 6550, "i7erp0", "sy",
+						clientProgram.getClass().getSimpleName());
 		clientProgram.run(dbContext, "Application is running in client mode.");
 		dbContext.close();
 	}

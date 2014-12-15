@@ -22,20 +22,28 @@ import de.abas.erp.jfop.rt.api.annotation.RunFopWith;
 public class ZipCodeEventHandler {
 
 	@FieldEventHandler(field = "zipCode", type = FieldEventType.VALIDATION)
-	public void zipCodeValidation(FieldEvent event, ScreenControl screenControl, DbContext ctx, CustomerEditor head) throws EventException {
+	public void zipCodeValidation(FieldEvent event, ScreenControl screenControl,
+			DbContext ctx, CustomerEditor head) throws EventException {
 		if (head.getCtryCode().equals("D")) {
-			if (!((head.getZipCode().matches("[1-9][0-9]{4}")) || (head.getZipCode().matches("[0][1-9][0-9]{3}")))) {
-				throw new EventException("Zip code invalid! Please enter a valid german zip code.", 1);
+			if (!((head.getZipCode().matches("[1-9][0-9]{4}")) || (head.getZipCode()
+					.matches("[0][1-9][0-9]{3}")))) {
+				throw new EventException(
+						"Zip code invalid! Please enter a valid german zip code.", 1);
 			}
 		}
 		else if (head.getCtryCode().equals("CH")) {
 			if (!(head.getZipCode().matches("[1-9][0-9]{3}"))) {
-				throw new EventException("Zip code invalid! Please enter a valid swiss zip code.", 1);
+				throw new EventException(
+						"Zip code invalid! Please enter a valid swiss zip code.", 1);
 			}
 		}
 		else if (head.getCtryCode().equals("E")) {
-			if (!((head.getZipCode().matches("[1-4][0-9]{4}") || (head.getCtryCode().matches("[0][1-9][0-9]{3}") || (head.getCtryCode().matches("5[0-2][0-9]{3}")))))) {
-				throw new EventException("Zip code invalid! Please enter a valid spanish zip code.", 1);
+			if (!((head.getZipCode().matches("[1-4][0-9]{4}") || (head.getCtryCode()
+					.matches("[0][1-9][0-9]{3}") || (head.getCtryCode()
+					.matches("5[0-2][0-9]{3}")))))) {
+				throw new EventException(
+						"Zip code invalid! Please enter a valid spanish zip code.",
+						1);
 			}
 		}
 	}

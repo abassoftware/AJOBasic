@@ -59,7 +59,8 @@ public class CreateProductsFromTXT extends AbstractAjoAccess {
 
 			while ((read = bufferedReader.readLine()) != null) {
 				value = initFieldValue(read);
-				ProductEditor productEditor = dbContext.newObject(ProductEditor.class);
+				ProductEditor productEditor =
+						dbContext.newObject(ProductEditor.class);
 				for (int i = 0; i < value.length; i++) {
 					productEditor.setString(field[i], value[i]);
 					dbContext.out().println(field[i] + " - > " + value[i]);
@@ -86,9 +87,11 @@ public class CreateProductsFromTXT extends AbstractAjoAccess {
 	 * @param ctx The database context.
 	 * @param bufferedWriter The BufferedWriter instance.
 	 * @param productEditor The ProductEditor instance.
-	 * @throws IOException Exception thrown if an error occurred while writing to log file.
+	 * @throws IOException Exception thrown if an error occurred while writing to log
+	 * file.
 	 */
-	private void commitProducts(DbContext ctx, BufferedWriter bufferedWriter, ProductEditor productEditor) throws IOException {
+	private void commitProducts(DbContext ctx, BufferedWriter bufferedWriter,
+			ProductEditor productEditor) throws IOException {
 		// For testing purposes
 		// productEditor.abort();
 

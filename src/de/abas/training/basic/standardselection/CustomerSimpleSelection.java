@@ -18,11 +18,16 @@ public class CustomerSimpleSelection extends AbstractAjoAccess {
 	public void run(String[] args) {
 		DbContext dbContext = getDbContext();
 
-		SelectionBuilder<Customer> selectionBuilder = SelectionBuilder.create(Customer.class);
-		Query<Customer> queryCustomer = dbContext.createQuery(selectionBuilder.build());
+		SelectionBuilder<Customer> selectionBuilder =
+				SelectionBuilder.create(Customer.class);
+		Query<Customer> queryCustomer =
+				dbContext.createQuery(selectionBuilder.build());
 
 		for (Customer customer : queryCustomer) {
-			dbContext.out().println(customer.getIdno() + " - " + customer.getSwd() + " - " + customer.getDescrOperLang() + " - " + customer.getPhoneNo());
+			dbContext.out().println(
+					customer.getIdno() + " - " + customer.getSwd() + " - "
+							+ customer.getDescrOperLang() + " - "
+							+ customer.getPhoneNo());
 		}
 
 	}

@@ -133,7 +133,9 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	 */
 	public DbContext getDbContext() {
 		if (dbContext == null) {
-			dbContext = ContextHelper.createClientContext(hostname, port, mandant, password, this.getClass().getSimpleName());
+			dbContext =
+					ContextHelper.createClientContext(hostname, port, mandant,
+							password, this.getClass().getSimpleName());
 			mode = ContextMode.CLIENT_MODE;
 		}
 		return dbContext;
@@ -195,7 +197,8 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 
 	// server access: get server context. Initialize mode
 	@Override
-	public int runFop(FOPSessionContext fopSessionContext, String[] args) throws FOPException {
+	public int runFop(FOPSessionContext fopSessionContext, String[] args)
+			throws FOPException {
 		dbContext = fopSessionContext.getDbContext();
 		mode = ContextMode.SERVER_MODE;
 		run(args);
@@ -275,14 +278,16 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	/**
 	 * Checks whether the client context is running.
 	 *
-	 * @return true -> client context is running, false -> client context is not running
+	 * @return true -> client context is running, false -> client context is not
+	 * running
 	 */
 	private boolean isClientContextRunning() {
 		if (mode.equals(ContextMode.CLIENT_MODE)) {
 			return true;
 		}
 		else {
-			dbContext.out().println("No Client-Mode running -> parameter may not be changed");
+			dbContext.out().println(
+					"No Client-Mode running -> parameter may not be changed");
 			return false;
 		}
 	}

@@ -65,7 +65,8 @@ public class FOcallsAJO implements ContextRunnable {
 		// gets the U buffer
 		// BufferFactory.newInstance(false) => FO commands German
 		// BufferFactory.newInstance(true) => FO commands English
-		UserTextBuffer userTextBuffer = BufferFactory.newInstance(false).getUserTextBuffer();
+		UserTextBuffer userTextBuffer =
+				BufferFactory.newInstance(false).getUserTextBuffer();
 
 		int no1 = 0;
 		int no2 = 0;

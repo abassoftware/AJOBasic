@@ -28,19 +28,22 @@ public class UseTypedCommand extends AbstractAjoAccess {
 	public void run(String[] args) {
 		DbContext dbContext = getDbContext();
 
-		EditorCommand editorCommand = EditorCommandFactory.typedCmd(EnumTypeCommands.Stockadjustment);
+		EditorCommand editorCommand =
+				EditorCommandFactory.typedCmd(EnumTypeCommands.Stockadjustment);
 
 		try {
 			EditorObject editorObject = dbContext.openEditor(editorCommand);
 			if (editorObject instanceof StockAdjustmentEditor) {
-				StockAdjustmentEditor stockAdjustmentEditor = (StockAdjustmentEditor) editorObject;
+				StockAdjustmentEditor stockAdjustmentEditor =
+						(StockAdjustmentEditor) editorObject;
 
 				// fills head fields
 				String idno = "10003";
 				stockAdjustmentEditor.setProduct(getSelectedProduct(idno));
 				stockAdjustmentEditor.setDocNo("mybeleg_bf02");
 				stockAdjustmentEditor.setDateDoc(new AbasDate());
-				stockAdjustmentEditor.setEntType(EnumEntryTypeStockAdjustment.Receipt);
+				stockAdjustmentEditor
+						.setEntType(EnumEntryTypeStockAdjustment.Receipt);
 
 				// clears table
 				stockAdjustmentEditor.table().clear();
@@ -49,11 +52,13 @@ public class UseTypedCommand extends AbstractAjoAccess {
 				Row appendRow = stockAdjustmentEditor.table().appendRow();
 				int number = 1;
 				appendRow.setUnitQty(number);
-				appendRow.setString(StockAdjustmentEditor.Row.META.location2, "L01.002");
+				appendRow.setString(StockAdjustmentEditor.Row.META.location2,
+						"L01.002");
 
 				// execute stock adjustment
 				stockAdjustmentEditor.commit();
-				getDbContext().out().println("Stock adjustment: " + idno + " - Number: " + number);
+				getDbContext().out().println(
+						"Stock adjustment: " + idno + " - Number: " + number);
 			}
 		}
 		catch (CommandException e) {
@@ -68,7 +73,8 @@ public class UseTypedCommand extends AbstractAjoAccess {
 	 * @return The product as an instance of Product.
 	 */
 	private Product getSelectedProduct(String idno) {
-		SelectionBuilder<Product> selectionBuilder = SelectionBuilder.create(Product.class);
+		SelectionBuilder<Product> selectionBuilder =
+				SelectionBuilder.create(Product.class);
 		selectionBuilder.add(Conditions.eq(Product.META.idno, idno));
 		return QueryUtil.getFirst(getDbContext(), selectionBuilder.build());
 	}

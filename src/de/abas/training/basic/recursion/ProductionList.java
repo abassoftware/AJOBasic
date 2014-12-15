@@ -36,7 +36,8 @@ public class ProductionList extends AbstractAjoAccess {
 
 			Product product = getSelectedProduct(idno);
 			if (product != null) {
-				ctx.out().println("Product: " + product.getIdno() + " - " + product.getSwd());
+				ctx.out().println(
+						"Product: " + product.getIdno() + " - " + product.getSwd());
 				printAllLevelsOfProductionList(product, 1);
 			}
 			else {
@@ -56,7 +57,8 @@ public class ProductionList extends AbstractAjoAccess {
 	 * @return The product as an instance of Product.
 	 */
 	private Product getSelectedProduct(String idno) {
-		SelectionBuilder<Product> selectionBuilder = SelectionBuilder.create(Product.class);
+		SelectionBuilder<Product> selectionBuilder =
+				SelectionBuilder.create(Product.class);
 		selectionBuilder.add(Conditions.eq(Product.META.idno, idno));
 		return QueryUtil.getFirst(getDbContext(), selectionBuilder.build());
 	}
@@ -81,13 +83,18 @@ public class ProductionList extends AbstractAjoAccess {
 	 * @param product The current product.
 	 * @param indentationLevel The level of indentation.
 	 */
-	private void printAllLevelsOfProductionList(Product product, int indentationLevel) {
+	private void
+			printAllLevelsOfProductionList(Product product, int indentationLevel) {
 		int lowerLevelIndentation = ++indentationLevel;
 		Iterable<Row> rows = product.table().getRows();
 		for (Row row : rows) {
-			getDbContext().out().println(makeIndentation(indentationLevel) + row.getProductListElem().getIdno() + " - " + row.getProdListElem().getSwd());
+			getDbContext().out().println(
+					makeIndentation(indentationLevel)
+							+ row.getProductListElem().getIdno() + " - "
+							+ row.getProdListElem().getSwd());
 			if (row.getProductListElem() instanceof Product) {
-				printAllLevelsOfProductionList((Product) row.getProductListElem(), lowerLevelIndentation);
+				printAllLevelsOfProductionList((Product) row.getProductListElem(),
+						lowerLevelIndentation);
 			}
 		}
 	}

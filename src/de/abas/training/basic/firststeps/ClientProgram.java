@@ -19,7 +19,9 @@ public class ClientProgram {
 	public static void main(String[] args) {
 		ClientProgram clientProgram = new ClientProgram();
 		// creates client context - configure parameters according to your client
-		DbContext dbContext = ContextHelper.createClientContext("schulung", 6550, "i7erp0", "sy", clientProgram.getClass().getSimpleName());
+		DbContext dbContext =
+				ContextHelper.createClientContext("schulung", 6550, "i7erp0", "sy",
+						clientProgram.getClass().getSimpleName());
 		// prints to console
 		dbContext.out().println("Client-Context running");
 		// closes database context

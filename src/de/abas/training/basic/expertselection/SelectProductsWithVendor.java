@@ -22,7 +22,8 @@ public class SelectProductsWithVendor extends AbstractAjoAccess {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		SelectProductsWithVendor selectProductsWithVendor = new SelectProductsWithVendor();
+		SelectProductsWithVendor selectProductsWithVendor =
+				new SelectProductsWithVendor();
 		selectProductsWithVendor.runClientProgram(args);
 	}
 
@@ -32,11 +33,15 @@ public class SelectProductsWithVendor extends AbstractAjoAccess {
 		ctx.getSettings().setDisplayMode(DisplayMode.DISPLAY);
 
 		String criteria = "idno=;vendor<>`;@language=en";
-		Selection<Product> selection = ExpertSelection.create(Product.class, criteria);
+		Selection<Product> selection =
+				ExpertSelection.create(Product.class, criteria);
 		Query<Product> query = ctx.createQuery(selection);
 
 		for (Product product : query) {
-			ctx.out().println(product.getIdno() + " - " + product.getSwd() + " - " + product.getString("vendor^idno") + " - " + product.getString("vendor^swd"));
+			ctx.out().println(
+					product.getIdno() + " - " + product.getSwd() + " - "
+							+ product.getString("vendor^idno") + " - "
+							+ product.getString("vendor^swd"));
 		}
 	}
 

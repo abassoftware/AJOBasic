@@ -32,7 +32,8 @@ public class CreateNewProduct extends AbstractAjoAccess {
 		productEditor.setSalesPrice(326.95);
 
 		// selects product for production list
-		SelectionBuilder<Product> selectionBuilder = SelectionBuilder.create(Product.class);
+		SelectionBuilder<Product> selectionBuilder =
+				SelectionBuilder.create(Product.class);
 		selectionBuilder.add(Conditions.starts(Product.META.swd, "MYCPU"));
 		Product product = QueryUtil.getFirst(ctx, selectionBuilder.build());
 
@@ -45,7 +46,9 @@ public class CreateNewProduct extends AbstractAjoAccess {
 		productEditor.commit();
 
 		// prints information about new product to console
-		ctx.out().println("Product created: " + productEditor.objectId().getIdno() + " " + productEditor.objectId().getSwd());
+		ctx.out().println(
+				"Product created: " + productEditor.objectId().getIdno() + " "
+						+ productEditor.objectId().getSwd());
 	}
 
 }
