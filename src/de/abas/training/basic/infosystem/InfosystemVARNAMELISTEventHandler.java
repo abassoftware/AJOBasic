@@ -11,8 +11,8 @@ import de.abas.erp.axi2.event.FieldEvent;
 import de.abas.erp.axi2.type.ButtonEventType;
 import de.abas.erp.axi2.type.FieldEventType;
 import de.abas.erp.db.DbContext;
-import de.abas.erp.db.infosystem.custom.ow1.InfosystemVARNAMELIST;
-import de.abas.erp.db.infosystem.custom.ow1.InfosystemVARNAMELIST.Row;
+import de.abas.erp.db.infosystem.custom.ow1.ControlVarnameList;
+import de.abas.erp.db.infosystem.custom.ow1.ControlVarnameList.Row;
 import de.abas.erp.db.schema.company.Vartab;
 import de.abas.erp.jfop.rt.api.annotation.RunFopWith;
 
@@ -23,8 +23,7 @@ import de.abas.erp.jfop.rt.api.annotation.RunFopWith;
  * @author abas Software AG
  *
  */
-@EventHandler(head = InfosystemVARNAMELIST.class,
-		row = InfosystemVARNAMELIST.Row.class)
+@EventHandler(head = ControlVarnameList.class, row = ControlVarnameList.Row.class)
 @RunFopWith(EventHandlerRunner.class)
 public class InfosystemVARNAMELISTEventHandler {
 
@@ -39,7 +38,7 @@ public class InfosystemVARNAMELISTEventHandler {
 	 */
 	@ButtonEventHandler(field = "start", type = ButtonEventType.AFTER)
 	public void startAfter(ButtonEvent event, ScreenControl screenControl,
-			DbContext ctx, InfosystemVARNAMELIST head) throws EventException {
+			DbContext ctx, ControlVarnameList head) throws EventException {
 		if (head.getYvartab() != null) {
 			Iterable<Vartab.Row> rows = head.getYvartab().table().getRows();
 			for (Vartab.Row row : rows) {
@@ -61,7 +60,7 @@ public class InfosystemVARNAMELISTEventHandler {
 	 */
 	@FieldEventHandler(field = "yvartab", type = FieldEventType.EXIT)
 	public void yvartabExit(FieldEvent event, ScreenControl screenControl,
-			DbContext ctx, InfosystemVARNAMELIST head) throws EventException {
+			DbContext ctx, ControlVarnameList head) throws EventException {
 		head.table().clear();
 	}
 
