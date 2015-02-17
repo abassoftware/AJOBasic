@@ -20,24 +20,30 @@ import de.abas.training.basic.common.AbstractAjoAccess;
  */
 public class CreateProductsFromTXT extends AbstractAjoAccess {
 
+	public static final String READ_FILE_SERVER =
+			"java/projects/AJOBasic/files/CreateProductsFromTXT.txt";
+	public static final String LOG_FILE_SERVER =
+			"java/projects/AJOBasic/files/CreateProductsFromTXT.log";
+	public static final String READ_FILE_CLIENT = "files/CreateProductsFromTXT.txt";
+	public static final String LOG_FILE_CLIENT = "files/CreateProductsFromTXT.log";
+
 	@Override
 	public void run(String[] args) {
 		DbContext dbContext = getDbContext();
-
-		String readFile = "java/projects/AJOBasic/files/CreateProductsFromTXT.txt";
-		String logFile = "java/projects/AJOBasic/files/CreateProductsFromTXT.log";
 
 		BufferedReader bufferedReader = null;
 		BufferedWriter bufferedWriter = null;
 
 		try {
 			if (getMode().equals(ContextMode.SERVER_MODE.toString())) {
-				bufferedReader = new BufferedReader(new FileReader(readFile));
-				bufferedWriter = new BufferedWriter(new FileWriter(logFile));
+				bufferedReader =
+						new BufferedReader(new FileReader(READ_FILE_SERVER));
+				bufferedWriter = new BufferedWriter(new FileWriter(LOG_FILE_SERVER));
 			}
 			else {
-				dbContext.out().println("Server-Mode only");
-				return;
+				bufferedReader =
+						new BufferedReader(new FileReader(READ_FILE_CLIENT));
+				bufferedWriter = new BufferedWriter(new FileWriter(LOG_FILE_CLIENT));
 			}
 
 			String read = "";

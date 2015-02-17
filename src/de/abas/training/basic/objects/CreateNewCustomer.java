@@ -12,6 +12,10 @@ import de.abas.training.basic.common.AbstractAjoAccess;
  */
 public class CreateNewCustomer extends AbstractAjoAccess {
 
+	public static void main(String[] args) {
+		new CreateNewCustomer().runClientProgram(args);
+	}
+
 	@Override
 	public void run(String[] args) {
 		DbContext ctx = getDbContext();
