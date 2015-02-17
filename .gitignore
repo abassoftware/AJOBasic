@@ -1,3 +1,6 @@
 *.class
 .settings/
 classes/
+ajo-access.properties
+TestLogs/
+*.log

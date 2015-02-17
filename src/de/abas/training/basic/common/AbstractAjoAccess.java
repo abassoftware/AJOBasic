@@ -1,11 +1,7 @@
 package de.abas.training.basic.common;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Properties;
 
 import de.abas.eks.jfop.FOPException;
 import de.abas.eks.jfop.remote.ContextRunnable;
@@ -13,7 +9,6 @@ import de.abas.eks.jfop.remote.FOPSessionContext;
 import de.abas.erp.db.DbContext;
 import de.abas.erp.db.DbMessage;
 import de.abas.erp.db.MessageListener;
-import de.abas.erp.db.util.ContextHelper;
 
 /**
  * Utility method for getting the client and/or server context.
@@ -50,13 +45,7 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 		}
 	}
 
-	// define EDP connection properties
-	private String hostname;
-	private String mandant;
-	private String password;
-	private int port;
-	private boolean edpLog;
-
+	private ConnectionProvider connectionProvider = new ConnectionProvider();
 	private FileWriter fileWriterLogging;
 
 	// Initialize DbContext
@@ -84,12 +73,11 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	 */
 	public DbContext getDbContext() {
 		if (dbContext == null) {
-			loadProperties();
 			dbContext =
-					ContextHelper.createClientContext(hostname, port, mandant,
-							password, this.getClass().getSimpleName());
+					connectionProvider.createDbContext(this.getClass()
+							.getSimpleName());
 			mode = ContextMode.CLIENT_MODE;
-			if (edpLog) {
+			if (connectionProvider.edpLog) {
 				enableLogging();
 			}
 			addDefaultMessageListener();
@@ -103,7 +91,7 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	 * @return The host name.
 	 */
 	public String getHostname() {
-		return hostname;
+		return connectionProvider.hostname;
 	}
 
 	/**
@@ -112,7 +100,7 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	 * @return The client.
 	 */
 	public String getMandant() {
-		return mandant;
+		return connectionProvider.mandant;
 	}
 
 	/**
@@ -130,7 +118,7 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 	 * @return The port.
 	 */
 	public int getPort() {
-		return port;
+		return connectionProvider.port;
 	}
 
 	/**
@@ -199,27 +187,6 @@ public abstract class AbstractAjoAccess implements ContextRunnable {
 		}
 		catch (IOException e) {
 			getDbContext().out().println(e.getMessage());
-		}
-	}
-
-	private void loadProperties() {
-		Properties pr = new Properties();
-		File configFile = new File("ajo-access.properties");
-		try {
-			pr.load(new FileReader(configFile));
-			hostname = pr.getProperty("hostname");
-			mandant = pr.getProperty("mandant");
-			port = Integer.parseInt(pr.getProperty("port", "6550"));
-			password = pr.getProperty("password");
-			edpLog = Boolean.parseBoolean(pr.getProperty("edpLog", "false"));
-		}
-		catch (FileNotFoundException e) {
-			throw new RuntimeException("Could not find configuration file "
-					+ configFile.getAbsolutePath());
-		}
-		catch (IOException e) {
-			throw new RuntimeException("Could not load configuration file "
-					+ configFile.getAbsolutePath());
 		}
 	}
 }
