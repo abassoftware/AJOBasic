@@ -52,17 +52,17 @@ public class CreateNewProductTest {
 		Product product = productsRUNIT.get(0);
 		assertEquals("descr of product", "Tech Runit", product.getDescr());
 		assertEquals("packDimWidth of product", new BigDecimal(5).setScale(2,
-				RoundingMode.CEILING),
-				product.getPackDimWidth().setScale(2, RoundingMode.CEILING));
+				RoundingMode.HALF_UP),
+				product.getPackDimWidth().setScale(2, RoundingMode.HALF_UP));
 		assertEquals("packDimLength of product", new BigDecimal(5).setScale(2,
-				RoundingMode.CEILING),
-				product.getPackDimLength().setScale(2, RoundingMode.CEILING));
+				RoundingMode.HALF_UP),
+				product.getPackDimLength().setScale(2, RoundingMode.HALF_UP));
 		assertEquals("packDimHeight of product", new BigDecimal(2).setScale(2,
-				RoundingMode.CEILING),
-				product.getPackDimHeight().setScale(2, RoundingMode.CEILING));
+				RoundingMode.HALF_UP),
+				product.getPackDimHeight().setScale(2, RoundingMode.HALF_UP));
 		assertEquals("salesPrice of product", new BigDecimal(326.95).setScale(2,
-				RoundingMode.CEILING),
-				product.getSalesPrice().setScale(2, RoundingMode.CEILING));
+				RoundingMode.HALF_UP),
+				product.getSalesPrice().setScale(2, RoundingMode.HALF_UP));
 	}
 
 	@Before
