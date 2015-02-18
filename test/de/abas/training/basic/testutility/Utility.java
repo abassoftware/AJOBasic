@@ -44,7 +44,6 @@ public class Utility {
 		for (C object : objects) {
 			object.delete();
 		}
-
 	}
 
 	/**
@@ -63,6 +62,13 @@ public class Utility {
 	 */
 	public String getHostname() {
 		return hostname;
+	}
+
+	public <C extends SelectableObject> List<C> getObjects(DbContext ctx,
+			Class<C> className, String idnoFrom, String idnoTo) {
+		SelectionBuilder<C> selectionBuilder = SelectionBuilder.create(className);
+		selectionBuilder.add(Conditions.between("idno", idnoFrom, idnoTo));
+		return ctx.createQuery(selectionBuilder.build()).execute();
 	}
 
 }

@@ -19,12 +19,14 @@ import de.abas.training.basic.common.AbstractAjoAccess;
 public class EditExistingProducts extends AbstractAjoAccess {
 
 	DbContext ctx = null;
+	public static final String FROM = "10150";
+	public static final String TO = "10160";
 
 	@Override
 	public void run(String[] args) {
 		ctx = getDbContext();
 
-		for (Product product : getProductsBetween("10150", "10160")) {
+		for (Product product : getProductsBetween(FROM, TO)) {
 			try {
 				ProductEditor productEditor = product.createEditor();
 				productEditor.open(EditorAction.UPDATE);
@@ -40,10 +42,10 @@ public class EditExistingProducts extends AbstractAjoAccess {
 			}
 			catch (CommandException e) {
 				ctx.out()
-						.println(
-								"An exception occurred while trying to edit "
-										+ product.getId().toString() + ": "
-										+ e.getMessage());
+				.println(
+						"An exception occurred while trying to edit "
+								+ product.getId().toString() + ": "
+								+ e.getMessage());
 			}
 		}
 	}
@@ -59,8 +61,7 @@ public class EditExistingProducts extends AbstractAjoAccess {
 		SelectionBuilder<Product> selectionBuilder =
 				SelectionBuilder.create(Product.class);
 		selectionBuilder.add(Conditions.between(Product.META.idno, from, to));
-		Query<Product> queryProduct =
-				getDbContext().createQuery(selectionBuilder.build());
+		Query<Product> queryProduct = ctx.createQuery(selectionBuilder.build());
 		return queryProduct;
 	}
 
