@@ -15,7 +15,7 @@ import de.abas.training.basic.common.AbstractAjoAccess;
 public class CustomerSimpleSelection extends AbstractAjoAccess {
 
 	@Override
-	public void run(String[] args) {
+	public int run(String[] args) {
 		DbContext dbContext = getDbContext();
 
 		SelectionBuilder<Customer> selectionBuilder =
@@ -29,6 +29,12 @@ public class CustomerSimpleSelection extends AbstractAjoAccess {
 							+ customer.getDescrOperLang() + " - "
 							+ customer.getPhoneNo());
 		}
+
+		if (queryCustomer.execute().size() <= 0) {
+			return 1;
+		}
+
+		return 0;
 
 	}
 

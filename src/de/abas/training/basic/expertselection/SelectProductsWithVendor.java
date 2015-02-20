@@ -28,7 +28,7 @@ public class SelectProductsWithVendor extends AbstractAjoAccess {
 	}
 
 	@Override
-	public void run(String[] args) {
+	public int run(String[] args) {
 		DbContext ctx = getDbContext();
 		ctx.getSettings().setDisplayMode(DisplayMode.DISPLAY);
 
@@ -43,6 +43,12 @@ public class SelectProductsWithVendor extends AbstractAjoAccess {
 							+ product.getString("vendor^idno") + " - "
 							+ product.getString("vendor^swd"));
 		}
+
+		if (query.execute().size() <= 0) {
+			return 1;
+		}
+
+		return 0;
 	}
 
 }

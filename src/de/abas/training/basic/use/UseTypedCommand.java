@@ -25,7 +25,7 @@ import de.abas.training.basic.common.AbstractAjoAccess;
 public class UseTypedCommand extends AbstractAjoAccess {
 
 	@Override
-	public void run(String[] args) {
+	public int run(String[] args) {
 		DbContext dbContext = getDbContext();
 
 		EditorCommand editorCommand =
@@ -63,7 +63,9 @@ public class UseTypedCommand extends AbstractAjoAccess {
 		}
 		catch (CommandException e) {
 			dbContext.out().println(e.getMessage());
+			return 1;
 		}
+		return 0;
 	}
 
 	/**

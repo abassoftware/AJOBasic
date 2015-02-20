@@ -18,7 +18,7 @@ import de.abas.training.basic.common.AbstractAjoAccess;
 public class CreateNewProduct extends AbstractAjoAccess {
 
 	@Override
-	public void run(String[] args) {
+	public int run(String[] args) {
 		DbContext ctx = getDbContext();
 
 		// creates new product
@@ -49,6 +49,8 @@ public class CreateNewProduct extends AbstractAjoAccess {
 		ctx.out().println(
 				"Product created: " + productEditor.objectId().getIdno() + " "
 						+ productEditor.objectId().getSwd());
+
+		return 0;
 	}
 
 }

@@ -28,7 +28,7 @@ public class CreateProductsFromTXT extends AbstractAjoAccess {
 	public static final String LOG_FILE_CLIENT = "files/CreateProductsFromTXT.log";
 
 	@Override
-	public void run(String[] args) {
+	public int run(String[] args) {
 		DbContext dbContext = getDbContext();
 
 		BufferedReader bufferedReader = null;
@@ -60,7 +60,7 @@ public class CreateProductsFromTXT extends AbstractAjoAccess {
 				dbContext.out().println("File: is empty");
 				bufferedReader.close();
 				bufferedWriter.close();
-				return;
+				return 1;
 			}
 
 			while ((read = bufferedReader.readLine()) != null) {
@@ -79,12 +79,34 @@ public class CreateProductsFromTXT extends AbstractAjoAccess {
 		}
 		catch (FileNotFoundException e) {
 			getDbContext().out().println(e.getMessage());
-			return;
+			return 1;
 		}
 		catch (IOException e) {
 			getDbContext().out().println(e.getMessage());
-			return;
+			return 1;
 		}
+		finally {
+			if (bufferedReader != null) {
+				try {
+					bufferedReader.close();
+				}
+				catch (IOException e) {
+					getDbContext().out().println(e.getMessage());
+					return 1;
+				}
+			}
+			if (bufferedWriter != null) {
+				try {
+					bufferedWriter.close();
+				}
+				catch (IOException e) {
+					getDbContext().out().println(e.getMessage());
+					return 1;
+				}
+			}
+		}
+
+		return 0;
 	}
 
 	/**

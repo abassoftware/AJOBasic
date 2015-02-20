@@ -24,7 +24,7 @@ public class ProductionList extends AbstractAjoAccess {
 	}
 
 	@Override
-	public void run(String[] args) {
+	public int run(String[] args) {
 		DbContext ctx = getDbContext();
 
 		BufferedReader bufferedReader = null;
@@ -42,11 +42,15 @@ public class ProductionList extends AbstractAjoAccess {
 			}
 			else {
 				ctx.out().println("Product with idno " + idno + " does not exist.");
+				return 1;
 			}
 		}
 		catch (IOException e) {
 			ctx.out().println("Could not read from console: " + e.getMessage());
+			return 1;
 		}
+
+		return 0;
 
 	}
 
@@ -84,14 +88,14 @@ public class ProductionList extends AbstractAjoAccess {
 	 * @param indentationLevel The level of indentation.
 	 */
 	private void
-			printAllLevelsOfProductionList(Product product, int indentationLevel) {
+	printAllLevelsOfProductionList(Product product, int indentationLevel) {
 		int lowerLevelIndentation = ++indentationLevel;
 		Iterable<Row> rows = product.table().getRows();
 		for (Row row : rows) {
 			getDbContext().out().println(
 					makeIndentation(indentationLevel)
-							+ row.getProductListElem().getIdno() + " - "
-							+ row.getProdListElem().getSwd());
+					+ row.getProductListElem().getIdno() + " - "
+					+ row.getProdListElem().getSwd());
 			if (row.getProductListElem() instanceof Product) {
 				printAllLevelsOfProductionList((Product) row.getProductListElem(),
 						lowerLevelIndentation);

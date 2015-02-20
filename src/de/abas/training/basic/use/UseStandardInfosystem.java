@@ -29,7 +29,7 @@ public class UseStandardInfosystem extends AbstractAjoAccess {
 	}
 
 	@Override
-	public void run(String[] args) {
+	public int run(String[] args) {
 		DbContext ctx = getDbContext();
 
 		ctx.getSettings().setDisplayMode(DisplayMode.DISPLAY);
@@ -43,9 +43,11 @@ public class UseStandardInfosystem extends AbstractAjoAccess {
 		for (Row row : rows) {
 			ctx.out().println(
 					row.getLgruppe().getSwd() + " - " + row.getLager().getSwd()
-							+ " - " + row.getLplatz().getSwd() + " - "
-							+ row.getLemge() + " - " + row.getString("leinheit"));
+					+ " - " + row.getLplatz().getSwd() + " - "
+					+ row.getLemge() + " - " + row.getString("leinheit"));
 		}
+
+		return 0;
 	}
 
 	/**

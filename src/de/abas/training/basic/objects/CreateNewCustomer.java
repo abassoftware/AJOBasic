@@ -17,7 +17,7 @@ public class CreateNewCustomer extends AbstractAjoAccess {
 	}
 
 	@Override
-	public void run(String[] args) {
+	public int run(String[] args) {
 		DbContext ctx = getDbContext();
 
 		// creates a new customer
@@ -38,6 +38,8 @@ public class CreateNewCustomer extends AbstractAjoAccess {
 
 		// prints information about new customer to console
 		ctx.out().println("New Customer created: " + idno + " " + swd);
+
+		return 0;
 	}
 
 }

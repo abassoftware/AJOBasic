@@ -17,7 +17,7 @@ import de.abas.training.basic.common.AbstractAjoAccess;
 public class SelectProducts extends AbstractAjoAccess {
 
 	@Override
-	public void run(String[] args) {
+	public int run(String[] args) {
 		DbContext ctx = getDbContext();
 
 		SelectionBuilder<Product> selectionBuilder =
@@ -34,6 +34,12 @@ public class SelectProducts extends AbstractAjoAccess {
 					product.getIdno() + " - " + product.getSwd() + " - "
 							+ product.getDescr());
 		}
+
+		if (query.execute().size() <= 0) {
+			return 1;
+		}
+
+		return 0;
 	}
 
 }

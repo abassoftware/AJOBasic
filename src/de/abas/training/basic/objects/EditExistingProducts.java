@@ -23,7 +23,7 @@ public class EditExistingProducts extends AbstractAjoAccess {
 	public static final String TO = "10160";
 
 	@Override
-	public void run(String[] args) {
+	public int run(String[] args) {
 		ctx = getDbContext();
 
 		for (Product product : getProductsBetween(FROM, TO)) {
@@ -46,8 +46,12 @@ public class EditExistingProducts extends AbstractAjoAccess {
 						"An exception occurred while trying to edit "
 								+ product.getId().toString() + ": "
 								+ e.getMessage());
+				return 1;
 			}
+
 		}
+
+		return 0;
 	}
 
 	/**
