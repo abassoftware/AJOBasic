@@ -43,10 +43,13 @@ public class UseStandardInfosystem extends AbstractAjoAccess {
 		for (Row row : rows) {
 			ctx.out().println(
 					row.getLgruppe().getSwd() + " - " + row.getLager().getSwd()
-					+ " - " + row.getLplatz().getSwd() + " - "
-					+ row.getLemge() + " - " + row.getString("leinheit"));
+							+ " - " + row.getLplatz().getSwd() + " - "
+							+ row.getLemge() + " - " + row.getString("leinheit"));
 		}
 
+		if (stockLevelInformation.table().getRowCount() <= 0) {
+			return 1;
+		}
 		return 0;
 	}
 
