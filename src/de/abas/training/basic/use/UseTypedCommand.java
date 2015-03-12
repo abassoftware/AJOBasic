@@ -43,22 +43,22 @@ public class UseTypedCommand extends AbstractAjoAccess {
 				stockAdjustmentEditor.setDocNo("mybeleg_bf02");
 				stockAdjustmentEditor.setDateDoc(new AbasDate());
 				stockAdjustmentEditor
-						.setEntType(EnumEntryTypeStockAdjustment.Receipt);
+				.setEntType(EnumEntryTypeStockAdjustment.Receipt);
 
 				// clears table
 				stockAdjustmentEditor.table().clear();
 
 				// add row to the table and fill the fields
 				Row appendRow = stockAdjustmentEditor.table().appendRow();
-				int number = 1;
-				appendRow.setUnitQty(number);
+				int quantity = 1;
+				appendRow.setUnitQty(quantity);
 				appendRow.setString(StockAdjustmentEditor.Row.META.location2,
 						"L01.002");
 
 				// execute stock adjustment
 				stockAdjustmentEditor.commit();
 				getDbContext().out().println(
-						"Stock adjustment: " + idno + " - Number: " + number);
+						"Stock adjustment: " + idno + " - Quantity: " + quantity);
 			}
 		}
 		catch (CommandException e) {
