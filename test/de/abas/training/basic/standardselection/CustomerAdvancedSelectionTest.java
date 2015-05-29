@@ -24,6 +24,7 @@ public class CustomerAdvancedSelectionTest {
 		int status = instance.run(null);
 		assertEquals("status of selection", 0, status);
 		logger.info("query was " + (status == 0 ? "not empty" : "empty"));
+
 	}
 
 	@Before

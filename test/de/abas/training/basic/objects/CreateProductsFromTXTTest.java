@@ -40,6 +40,11 @@ public class CreateProductsFromTXTTest {
 		List<String> swds = getSwdsFromTXT();
 		for (String swd : swds) {
 			utility.deleteObjects(ctx, Product.class, swd);
+			List<Product> productsContainingSwds =
+					utility.getObjects(ctx, Product.class, swd);
+			for (Product product : productsContainingSwds) {
+				product.delete();
+			}
 		}
 	}
 

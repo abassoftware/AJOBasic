@@ -65,6 +65,13 @@ public class Utility {
 	}
 
 	public <C extends SelectableObject> List<C> getObjects(DbContext ctx,
+			Class<C> className, String swd) {
+		SelectionBuilder<C> selectionBuilder = SelectionBuilder.create(className);
+		selectionBuilder.add(Conditions.eq("swd", swd));
+		return ctx.createQuery(selectionBuilder.build()).execute();
+	}
+
+	public <C extends SelectableObject> List<C> getObjects(DbContext ctx,
 			Class<C> className, String idnoFrom, String idnoTo) {
 		SelectionBuilder<C> selectionBuilder = SelectionBuilder.create(className);
 		selectionBuilder.add(Conditions.between("idno", idnoFrom, idnoTo));
