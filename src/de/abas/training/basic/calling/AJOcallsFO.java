@@ -19,7 +19,7 @@ public class AJOcallsFO extends AbstractAjoAccess {
 		final DbContext ctx = getDbContext();
 
 		// find FO file in files/ASSIGN.VALUE.FO2
-		FOe.input("ow1/ASSIGN.VALUE.FO2");
+		FOe.input("ow1/ASSIGN.VALUE.FO");
 
 		final UserTextBuffer userTextBuffer = BufferFactory.newInstance(true).getUserTextBuffer();
 		if (userTextBuffer.isVarDefined("xrvalue")) {
