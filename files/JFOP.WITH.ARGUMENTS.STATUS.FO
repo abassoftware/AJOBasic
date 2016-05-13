@@ -1,5 +1,5 @@
 ..!interpreter english declaration noabbrev englvar
-..!fo2compiler version: 2.0.3, generated: Fri May 13 13:12:04 CEST 2016
+..!fo2compiler version: 2.0.3, generated: Fri May 13 14:53:05 CEST 2016
 .type INT xprocsp  ?      _F|defined(U|xprocsp)
 ..============================================================================
 ..  Author             : jasc
@@ -29,7 +29,7 @@
 .formula U|xtmessage = "Okay"
 .read "Please enter alphabetical letters and numbers only" U|xtinput
 .input "de.abas.training.basic.calling.FOcallsAJO.class"
-..!line JFOP.WITH.ARGUMENTS.STATUS.FO2:20:3:"CALL diplayErrorMessage"
+..!line JFOP.WITH.ARGUMENTS.STATUS.FO2:20:3:"CALL displayMessage"
 .formula U|xprocsp = U|xprocsp + 1
 .type text U|xprocst.U|xprocsp          ? _F|defined(U|xprocst.U|xprocsp)
 .formula U|xprocst.U|xprocsp = "PC00001"
@@ -42,15 +42,10 @@
 ..!line JFOP.WITH.ARGUMENTS.STATUS.FO2:23:0:"enableDebug"
 .set debug +
 .continue 'U|xprocst.U|xprocsp'
-!PR00002: diplayErrorMessage
-..!line JFOP.WITH.ARGUMENTS.STATUS.FO2:27:0:"diplayErrorMessage"
-.continue EL00000      ?  _(_G|status = 0)
+!PR00002: displayMessage
+..!line JFOP.WITH.ARGUMENTS.STATUS.FO2:27:0:"displayMessage"
 .box Message
 'U|xtmessage'
 ..
-.continue EF00000
-!EL00000: ELSE
-!EF00000
-..!line JFOP.WITH.ARGUMENTS.STATUS.FO2:32:0:"END IF/ELSE"
 .continue 'U|xprocst.U|xprocsp'
 !END

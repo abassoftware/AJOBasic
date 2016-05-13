@@ -17,17 +17,15 @@ def main(){
     .formula U|xtmessage = "Okay"
     .read "Please enter alphabetical letters and numbers only" U|xtinput
     .input "de.abas.training.basic.calling.FOcallsAJO.class"
-    .call diplayErrorMessage()
+    .call displayMessage()
 }
 
 def enableDebug() {
     .set debug + 
 } 
 
-def diplayErrorMessage(){
-    if(_G|status = 0) {
+def displayMessage(){
         .box Message
         .item 'U|xtmessage'
         .endItem
-    }
 }

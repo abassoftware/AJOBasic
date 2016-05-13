@@ -1,5 +1,5 @@
 ..!interpreter english declaration noabbrev englvar
-..!fo2compiler version: 2.0.3, generated: Fri May 13 13:12:00 CEST 2016
+..!fo2compiler version: 2.0.3, generated: Fri May 13 14:52:45 CEST 2016
 .type INT xprocsp  ?      _F|defined(U|xprocsp)
 ..============================================================================
 ..  Author             : jasc
