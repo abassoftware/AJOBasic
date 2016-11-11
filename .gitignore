@@ -1,6 +1,17 @@
-*.class
+# dev env specific files
+.idea/
+.classpath
 .settings/
+.project
+
+# build files
+bin/
 classes/
-ajo-access.properties
-TestLogs/
-*.log
+build/
+
+# gradle specific files
+.gradle
+gradle.properties
+
+# log files
+**/*.log

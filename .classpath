@@ -1,15 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="src" path="test"/>
-	<classpathentry kind="src" path="/Client"/>
-	<classpathentry kind="lib" path="lib/hamcrest-core-1.3.jar"/>
-	<classpathentry kind="lib" path="lib/junit-4.11.jar" sourcepath="lib/jdom-2.0.5-sources.jar">
-		<attributes>
-			<attribute name="javadoc_location" value="jar:platform:/resource/AJOBasic/lib/jdom-2.0.5-javadoc.jar!/"/>
-		</attributes>
-	</classpathentry>
-	<classpathentry kind="lib" path="lib/mockito-all-1.9.5.jar"/>
-	<classpathentry kind="output" path="classes"/>
+	<classpathentry path="bin" kind="output"/>
+	<classpathentry kind="src" path="src/main/java"/>
+	<classpathentry kind="src" path="src/main/resources"/>
+	<classpathentry kind="src" path="src/test/java"/>
+	<classpathentry kind="src" path="src/test/resources"/>
+	<classpathentry kind="src" path="src/integTest/java"/>
+	<classpathentry kind="src" path="src/integTest/resources"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8/"/>
+	<classpathentry sourcepath="/Users/Jazz/.gradle/caches/modules-2/files-2.1/org.jdom/jdom2/2.0.6/3dcf8ba7582eeac3b67ed5155ee3659e16c8dadc/jdom2-2.0.6-sources.jar" kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/org.jdom/jdom2/2.0.6/6f14738ec2e9dd0011e343717fa624a10f8aab64/jdom2-2.0.6.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/utilities/1.0.0/74f5093bb5e1d56589def13a11ad2e277a7c8566/utilities-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-jedp-util/1.0.0/1ea869afafe79c0f579efaa1b84f6f2d2c74bb9b/abas-jedp-util-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-jfop-base/1.0.0/4c2b1bbb25304d60901d0f9cb68f8fb8f7473a06/abas-jfop-base-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-print/1.0.0/d88aaade2e4d01ff3ff0a73eb64e83bcd7bcec84/abas-print-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-print-core/1.0.0/5b8aee6283ef8545d0fcd5fb02c9de13445fe4ca/abas-print-core-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-print-channel/1.0.0/26458189f26f3157b02691d8924e9788d2b363a8/abas-print-channel-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-print-remote/1.0.0/3cc4316602d9c609036512b4f14eb2b3f466afc7/abas-print-remote-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/edi/1.0.0/fa13b147ae94b6a80ff9eb8bdcbc3c13a073543e/edi-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-edi-dbutil/1.0.0/a35f50fafd4680fc62c53aa2d4a8e3653bed7fac/abas-edi-dbutil-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-ediprocessing/1.0.0/c034867b8e98215ccdd37c96172164a3ab0ac8b4/abas-ediprocessing-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-report-utils/1.0.0/dda64e3b696704b1201c1d6efac5d9046cd8b4e4/abas-report-utils-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-openoffice/1.0.0/609878aafbb0754069c77a83b5ab43462f4c8784/abas-openoffice-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-barcode/1.0.0/938145a185a98951abf0769203c6b3f95272f349/abas-barcode-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-etl/1.0.0/8d73b3d683e79a7ea5343977f51a55f5792a0830/abas-etl-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-net/1.0.0/99f02b3658ffed63d57b99f8d26e0359152a66fe/abas-net-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-datev/1.0.0/cddf36b6b608211c541489ce93d25960fea07106/abas-datev-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-paytrans/1.0.0/ce23546fdd92594d7444d53eed1e58dace551a36/abas-paytrans-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-edifact/1.0.0/38a51bdea66bba0987251f9ea122efd7a5d5a36c/abas-edifact-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/standard-jfops/1.0.0/8a5fc0c58235b5bb4c503553318edd4ddb2eaa1d/standard-jfops-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-internal-jfops/1.0.0/80e6b9f5e148da835e992f353d231016b76681df/abas-internal-jfops-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-service/1.0.0/cd52f25439971f77c50f8bf440dfe5170b794c92/abas-service-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-db-internal/1.0.0/af11112d21963db567d1f886f12f149fb1cd1223/abas-db-internal-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-db-util/1.0.0/43c4ce01fc6d077e43c89330dee5c682c6a84a26/abas-db-util-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-classgen-templates/1.0.0/61f9b72fb3334a9c70f31761eca1abe26945bd2a/abas-classgen-templates-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-classgen/1.0.0/e989b32e0cfc4248acf5517d93ff3fb0852d33/abas-classgen-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-classgen-enums/1.0.0/c1add01091689772542dff71c39daaa0475e5144/abas-classgen-enums-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-classgen-vartab/1.0.0/49df628d00970073e3303e9bfde8639fe20a7b35/abas-classgen-vartab-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-axi/1.0.0/4d3a5a8f848a4d046eb47a980fe01f8664760b3c/abas-axi-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-erpapi/1.0.0/105e4b59871875548e4edff73bcd26cc0071d23c/abas-erpapi-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-axi2/1.0.0/5377887e62568f62d8ed43e2e482317bc2b49840/abas-axi2-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-callparam/1.0.0/9fa582d36fa0cecde866ab100057e2db6934011c/abas-callparam-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-property-1.0.0/1.0.0/39c1da4492e114738f0e45a15b08ed0176763ccd/abas-property-1.0.0-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-xml2lay/1.0.0/3a5d3c982dcd443a09c46193d5f88c02cecf1d25/abas-xml2lay-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-compliance/1.0.0/ebe7e62b4ab725255978a25262c47902602e80bc/abas-compliance-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-fonts/1.0.0/a004325e21e501e382546e3e989c74c162720454/abas-fonts-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/se-base-core/1.0.0/a153780b7c3cf675ca72e56d204961747a44c3bd/se-base-core-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/se-log-core/1.0.0/cbedd9f96ac6f4266ee801907eac85a2cdbc1e53/se-log-core-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/se-ws-core/1.0.0/a05b0be69555ab45e4efa8427ea016e52fed3a79/se-ws-core-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/commons-logging/1.0.0/21a8205f483b4b5dca01c969567900b042ae2318/commons-logging-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/jedp/1.0.0/79a9a9f37a548d0ec20b87f8ba9cf5ad4ed4bcdc/jedp-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-jfopapi/1.0.0/4f8319ab9558d4c4f32de92643eadcca0b86ff54/abas-jfopapi-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/commons-collections/1.0.0/761ea405b9b37ced573d2df0d1e3a4e0f9edc668/commons-collections-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/commons-io/1.0.0/7ffdb02f95af1c1a208544e076cea5b8e66e731a/commons-io-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-jfop-runtime-api/1.0.0/ea047559f48d963cecf4b9f6d4c3527b9c9ae08e/abas-jfop-runtime-api-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-db-base/1.0.0/93d09a0c2549320e11cea917f0c80317c8c94dfb/abas-db-base-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-erp-common/1.0.0/f874762c74c1cc65fa780cdbc51f278bfe868677/abas-erp-common-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/abas-enums/1.0.0/2f33f9971e47ebf812972ed3934396fe365aa2c9/abas-enums-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/groovy/1.0.0/c5371aaa20bcdca1175d9477fc0811f4fd99b68a/groovy-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/commons-lang3/1.0.0/659861b4acde07a0527211e40d256119face1d15/commons-lang3-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/slf4j-api/1.0.0/5b338f206827d88acd890739f400a9b7664e5984/slf4j-api-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.clientdir/abas-db/1.0.0/64cae29c0670f6b2d34c2454c3cb1b241b2da7ee/abas-db-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.clientdir/abas-db-infosys/1.0.0/81cb04989b5886d0a5a82f72986abc819d152157/abas-db-infosys-1.0.0.jar"/>
+	<classpathentry kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/de.abas.homedir/log4j/1.0.0/5af35056b4d257e4b64b9e8069c0746e8b08629f/log4j-1.0.0.jar"/>
+	<classpathentry sourcepath="/Users/Jazz/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/a6c32b40bf3d76eca54e3c601e5d1470c86fcdfa/junit-4.12-sources.jar" kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/junit/junit/4.12/2973d150c0dc1fefe998f834810d68f278ea58ec/junit-4.12.jar"/>
+	<classpathentry sourcepath="/Users/Jazz/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-all/1.3/47e033b7ab18c5dbd5fe29fc1bd5a40afe028818/hamcrest-all-1.3-sources.jar" kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-all/1.3/63a21ebc981131004ad02e0434e799fd7f3a8d5a/hamcrest-all-1.3.jar"/>
+	<classpathentry sourcepath="/Users/Jazz/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-all/1.10.19/8269667b73d9616600359a9b0ba1b1c7d0cf7a97/mockito-all-1.10.19-sources.jar" kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/org.mockito/mockito-all/1.10.19/539df70269cc254a58cccc5d8e43286b4a73bf30/mockito-all-1.10.19.jar"/>
+	<classpathentry sourcepath="/Users/Jazz/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/1dc37250fbc78e23a65a67fbbaf71d2e9cbc3c0b/hamcrest-core-1.3-sources.jar" kind="lib" path="/Users/Jazz/.gradle/caches/modules-2/files-2.1/org.hamcrest/hamcrest-core/1.3/42a25dc3219429f0e5d060061f71acb49bf010a0/hamcrest-core-1.3.jar"/>
 </classpath>
