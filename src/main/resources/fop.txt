@@ -1,1 +1,0 @@
-# 0  neu        feldpruef     *  plz    K  [C] de.abas.training.basic.eventhandling.ZipCodeEventHandler@ajoBasicApp

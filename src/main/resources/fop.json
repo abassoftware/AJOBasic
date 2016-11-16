@@ -1,0 +1,13 @@
+[
+	{
+		"databaseName" : "Kunde",
+		"groupName" : "Kunde",
+		"editorMode" : "neu",
+		"event" : "feldpruef",
+		"key" : "*",
+		"field" : "plz",
+		"headOrTable" : "K",
+		"isContinue" : "[C]",
+		"handler" : "java:de.abas.training.basic.eventhandling.ZipCodeEventHandler@ajoBasicApp"
+	}
+]
